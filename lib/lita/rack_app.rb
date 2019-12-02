@@ -71,7 +71,7 @@ module Lita
       robot.handlers.each do |handler|
         next unless handler.respond_to?(:http_routes)
 
-        handler.http_routes.each { |route| router.add_route(route) }
+        handler.http_routes.each { |route| router.url(route) }
       end
     end
 
